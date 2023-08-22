@@ -20,8 +20,13 @@ public class WorldClockApplication {
 
 		// first we need to capture what the time is at this exact moment...
 		ZonedDateTime zonedDateTime = ZonedDateTime.now();
-
 		
+		
+		
+
+		System.out.println("Toronto, Canada -> " + zonedDateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))); 
+		System.out.println("Brisbane, Australia -> " + (zonedDateTime.withZoneSameInstant(BRISBANE)).format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
+		System.out.println("Dublin, Ireland -> " + (zonedDateTime.withZoneSameInstant(DUBLIN)).format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
 		// from here you will need to create three system outs to print out the times and dates
 		
 		// ZonedDateTime has a method called withZoneSameInstant(<ZoneId>) which gives you the exact date time in the
